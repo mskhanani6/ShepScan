@@ -1,44 +1,97 @@
-# 🛡️ ShepScan
+<div align="center">
+  <img src="apps/web/public/logo.png" alt="ShepScan Logo" width="120" height="120" />
+  
+  # ShepScan
+  
+  **AI-Native Secret Detection for Modern Development Teams**
+  
+  *Stop secrets from leaking before they hit your repository*
 
-**AI-native security platform that prevents sensitive secrets from leaking into code repositories.**
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
+  [![NestJS](https://img.shields.io/badge/NestJS-10.0-E0234E.svg)](https://nestjs.com/)
+  [![Next.js](https://img.shields.io/badge/Next.js-15-black.svg)](https://nextjs.org/)
+  [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Radix-Obsidian/ShepScan/pulls)
+  
+  [Demo](#-quick-start) • [Features](#-features) • [Documentation](#-documentation) • [Contributing](#-contributing) • [Roadmap](#-roadmap)
 
-Unlike traditional scanners, ShepScan emphasizes:
-- **Real-time prevention** over reactive scanning
-- **AI-driven classification** to eliminate false positives
-- **Founder-friendly UX** that avoids DevSecOps complexity
+</div>
 
-## Project Structure
+---
 
-```
-apps/
-  api/     → NestJS Backend (Scanning Engine, API)
-  web/     → Next.js Frontend (Dashboard)
-docker-compose.yml → Infrastructure (Postgres, Redis)
-```
+## 🎯 The Problem
 
-## Quick Start
+**$4.45 million** — the average cost of a data breach in 2023. Many start with a single leaked secret.
+
+Developers accidentally commit API keys, database credentials, and tokens to repositories every day. Traditional scanners catch these *after* the damage is done.
+
+## 💡 The Solution
+
+ShepScan is an **open-core AI-native security platform** that:
+
+- 🔍 **Scans repositories** for 13+ secret types with regex + AI classification
+- 🤖 **Eliminates false positives** using Claude/GPT-4 powered analysis  
+- 💬 **Explains risks in plain English** — built for founders, not just security teams
+- 📊 **Visualizes severity** with real-time heat maps
+
+<div align="center">
+  <img src="https://img.shields.io/badge/Pre--Seed-Bootstrapped-purple.svg" alt="Pre-Seed" />
+  <img src="https://img.shields.io/badge/Status-MVP-green.svg" alt="MVP" />
+  <img src="https://img.shields.io/badge/Open_Core-Self_Host_Free-blue.svg" alt="Open Core" />
+</div>
+
+---
+
+## ✨ Features
+
+### Core Detection Engine
+| Feature | Description |
+|---------|-------------|
+| **13+ Secret Patterns** | AWS, Stripe, GitHub, Google, Slack, Discord, OpenAI, JWT, Private Keys, Database URLs |
+| **Git Integration** | Clone any public GitHub repo and scan in seconds |
+| **Line-Level Results** | Exact file path, line number, and redacted snippets |
+| **Severity Scoring** | Critical, High, Medium, Low classifications |
+
+### AI Intelligence Layer
+| Feature | Description |
+|---------|-------------|
+| **Real vs False Positive** | AI classifies if detected patterns are actual secrets |
+| **Confidence Scoring** | 0-100% confidence on each detection |
+| **Founder Mode Explanations** | Plain-English risk, impact, and remediation steps |
+| **Multi-Provider Support** | Works with OpenAI GPT-4 or Anthropic Claude |
+
+### Dashboard & UX
+| Feature | Description |
+|---------|-------------|
+| **Severity Heat Map** | Visual distribution of detected secrets |
+| **Expandable Details** | Click any secret to see AI analysis |
+| **Scan History** | Track previous scans and results |
+| **GitHub OAuth** | Connect your account for personalized experience |
+
+---
+
+## 🚀 Quick Start
 
 ### Prerequisites
 
-- **Git** (for cloning repos to scan)
 - **Node.js 20+**
-- **Docker & Docker Compose** (optional, for database)
+- **Git** (for repo cloning)
+- **Docker** (optional, for database)
 
-### 1. Start Infrastructure (Optional)
+### 1. Clone & Install
 
 ```bash
-docker-compose up -d
+git clone https://github.com/Radix-Obsidian/ShepScan.git
+cd ShepScan
 ```
 
-### 2. Start Backend API
+### 2. Start Backend
 
 ```bash
 cd apps/api
 npm install
 npm run start:dev
 ```
-
-API runs at: **http://localhost:3001**
 
 ### 3. Start Frontend
 
@@ -48,63 +101,127 @@ npm install
 npm run dev
 ```
 
-Dashboard runs at: **http://localhost:3000**
+### 4. Open Dashboard
 
-## Usage
-
-1. Open **http://localhost:3000**
-2. Paste a public GitHub repository URL
-3. Click **Scan Now**
-4. View detected secrets with file paths, line numbers, and severity
-
-## Secret Detection Patterns
-
-ShepScan detects 13+ secret types including:
-
-| Type | Severity | Example |
-|------|----------|---------|
-| AWS Access Key | Critical | `AKIA...` |
-| AWS Secret Key | Critical | 40-char base64 |
-| GitHub Token | Critical | `ghp_...`, `github_pat_...` |
-| Stripe Secret | Critical | `sk_live_...`, `sk_test_...` |
-| Database URL | Critical | `postgres://user:pass@...` |
-| Google API Key | High | `AIza...` |
-| Slack Token | High | `xoxb-...` |
-| Discord Token | High | `M...` pattern |
-| Private Keys | Critical | `-----BEGIN...PRIVATE KEY-----` |
-| OpenAI Key | High | `sk-...` |
-| JWT Secret | High | Variable assignment patterns |
-
-## API Endpoints
-
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/scan` | POST | Scan a repository by URL |
-| `/scan/quick?url=...` | GET | Quick scan (for testing) |
-| `/scan/health` | GET | Service health check |
-
-### Example Request
-
-```bash
-curl -X POST http://localhost:3001/scan \
-  -H "Content-Type: application/json" \
-  -d '{"repoUrl": "https://github.com/username/repo"}'
-```
-
-## Testing
-
-```bash
-cd apps/api
-npm run test        # Unit tests
-npm run test:e2e    # End-to-end tests
-```
-
-## Documentation
-
-- [PRD](./.agent/workflow/PRD.md) - Product Requirements
-- [SDD](./.agent/workflow/SDD.md) - System Design
-- [TDD](./.agent/workflow/TDD.md) - Technical Design
+Navigate to **http://localhost:3000** and scan your first repo!
 
 ---
 
-**Golden Sheep AI** — *Build narrow. Test deep. Ship confidently.*
+## 🏗️ Architecture
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                        Frontend                              │
+│                    Next.js 15 + React                        │
+│              TailwindCSS + shadcn/ui                         │
+└─────────────────────┬───────────────────────────────────────┘
+                      │ REST API
+┌─────────────────────▼───────────────────────────────────────┐
+│                        Backend                               │
+│                      NestJS 10                               │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐  │
+│  │ Scan Module │  │  AI Module  │  │    Auth Module      │  │
+│  │ • Detection │  │ • Classify  │  │ • GitHub OAuth      │  │
+│  │ • Git Clone │  │ • Explain   │  │ • JWT Sessions      │  │
+│  └─────────────┘  └─────────────┘  └─────────────────────┘  │
+└─────────────────────┬───────────────────────────────────────┘
+                      │
+┌─────────────────────▼───────────────────────────────────────┐
+│                     Infrastructure                           │
+│        PostgreSQL (Prisma) • Redis • OpenAI/Anthropic        │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 📚 Documentation
+
+| Document | Description |
+|----------|-------------|
+| [Product Requirements (PRD)](.agent/workflow/PRD.md) | Vision, goals, and user stories |
+| [System Design (SDD)](.agent/workflow/SDD.md) | Architecture and module breakdown |
+| [Technical Design (TDD)](.agent/workflow/TDD.md) | Implementation details and APIs |
+
+---
+
+## 🔧 Configuration
+
+Create `apps/api/.env`:
+
+```env
+# Database
+DATABASE_URL="postgresql://user:pass@localhost:5432/shepscan"
+
+# AI Provider (choose one)
+OPENAI_API_KEY=sk-...
+# or
+ANTHROPIC_API_KEY=sk-ant-...
+
+# GitHub OAuth (optional)
+GITHUB_CLIENT_ID=...
+GITHUB_CLIENT_SECRET=...
+
+# JWT
+JWT_SECRET=your-secure-secret-here
+```
+
+---
+
+## 🗺️ Roadmap
+
+### ✅ v0.1.0 — MVP (Current)
+- [x] Secret detection engine (13 patterns)
+- [x] GitHub repo scanning
+- [x] AI classification (OpenAI/Anthropic)
+- [x] Founder-friendly explanations
+- [x] Severity heat map
+- [x] GitHub OAuth
+
+### 🔜 v0.2.0 — Prevention
+- [ ] Pre-commit hooks
+- [ ] GitHub App integration
+- [ ] Real-time push protection
+- [ ] Slack/Discord notifications
+
+### 🔮 v0.3.0 — Enterprise
+- [ ] Private repo scanning
+- [ ] Team management
+- [ ] Audit logs
+- [ ] SSO/SAML
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! ShepScan is an **open-core** project.
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🐑 About Golden Sheep AI
+
+ShepScan is built by **Golden Sheep AI**, a bootstrapped pre-seed startup focused on developer security tools.
+
+**Our Philosophy:** *Build narrow. Test deep. Ship confidently.*
+
+<div align="center">
+  <br />
+  <a href="https://github.com/Radix-Obsidian/ShepScan/discussions">💬 Discussions</a> •
+  <a href="https://github.com/Radix-Obsidian/ShepScan/issues">🐛 Issues</a> •
+  <a href="https://github.com/Radix-Obsidian/ShepScan/releases">📦 Releases</a>
+  <br /><br />
+  <sub>Made with 🤍 by developers, for developers</sub>
+</div>
