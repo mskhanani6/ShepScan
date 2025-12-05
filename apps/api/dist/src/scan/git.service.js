@@ -66,13 +66,15 @@ let GitService = GitService_1 = class GitService {
         }
     }
     parseGitHubUrl(url) {
+        let cleanUrl = url.split('?')[0].split('#')[0].trim();
+        cleanUrl = cleanUrl.replace(/\/+$/, '');
         const patterns = [
             /^https?:\/\/github\.com\/([^\/]+)\/([^\/\.]+)(?:\.git)?(?:\/.*)?$/,
             /^git@github\.com:([^\/]+)\/([^\/\.]+)(?:\.git)?$/,
             /^github\.com\/([^\/]+)\/([^\/\.]+)(?:\.git)?(?:\/.*)?$/,
         ];
         for (const pattern of patterns) {
-            const match = url.match(pattern);
+            const match = cleanUrl.match(pattern);
             if (match) {
                 return {
                     owner: match[1],

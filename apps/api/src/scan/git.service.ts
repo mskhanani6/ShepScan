@@ -35,6 +35,12 @@ export class GitService {
      * Parse and validate a GitHub URL
      */
     parseGitHubUrl(url: string): { owner: string; repo: string } | null {
+        // Strip query params and fragments first
+        let cleanUrl = url.split('?')[0].split('#')[0].trim();
+        
+        // Remove trailing slashes
+        cleanUrl = cleanUrl.replace(/\/+$/, '');
+        
         // Support various GitHub URL formats
         const patterns = [
             // https://github.com/owner/repo
@@ -46,7 +52,7 @@ export class GitService {
         ];
 
         for (const pattern of patterns) {
-            const match = url.match(pattern);
+            const match = cleanUrl.match(pattern);
             if (match) {
                 return {
                     owner: match[1],
